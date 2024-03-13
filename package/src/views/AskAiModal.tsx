@@ -14,7 +14,7 @@ export function AskAiModal({
   chatConfig
 }: AskAiModalProps): React.JSX.Element {
   return <ModalDisplay isShowing={isShowing} onClose={onClose}>
-    <div className="w-[90vw] lg:w-[1000px] max-h-[90vh] mx-auto bg-gray-950 backdrop-blur-md bg-opacity-50 rounded-xl text-gray-500">
+    <div className="aip-w-[90vw] lg:aip-w-[1000px] aip-max-h-[90vh] aip-mx-auto aip-bg-gray-950 aip-backdrop-blur-md aip-bg-opacity-50 aip-rounded-xl aip-text-gray-500">
       <EmbeddedView chatConfig={chatConfig} />
     </div>
   </ModalDisplay>

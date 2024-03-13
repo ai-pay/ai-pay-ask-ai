@@ -8,7 +8,7 @@ export function DisplayMessages(): React.JSX.Element {
   const messages = useMessagesStore((state) => state.messages);
   
   return <>
-    <div className="flex flex-col gap-2 p-5">
+    <div className="aip-flex aip-flex-col aip-gap-2 aip-p-5">
       {messages.map((message) => {
         if (message.profile === "user") {
           return <UserQuestion 

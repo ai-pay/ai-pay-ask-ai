@@ -10,7 +10,7 @@ export function ClearMessagesButton(): React.JSX.Element | null {
   }
 
   return <button 
-    className="absolute top-0.5 right-0.5 px-2 py-0.5 text-gray-500 transition-colors dark:hover:text-gray-100 rounded-lg bg-slate-800/40 hover:bg-slate-800/70"
+    className="aip-absolute aip-top-0.5 aip-right-0.5 aip-px-2 aip-py-0.5 aip-text-gray-500 aip-transition-colors dark:hover:aip-text-gray-100 aip-rounded-lg aip-bg-slate-800/40 hover:aip-bg-slate-800/70"
     onClick={resetMessages}
   >
     Clear Chat

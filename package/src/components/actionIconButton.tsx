@@ -9,7 +9,7 @@ export function ActionIconButton({
   onClick,
 }: ActionIconButtonProps): React.JSX.Element {
   return <button
-    className="p-1 bg-slate-500/50 hover:bg-slate-500 text-black dark:text-slate-300 dark:hover:text-slate-100 rounded"
+    className="aip-p-1 aip-bg-slate-500/50 hover:aip-bg-slate-500 aip-text-black dark:aip-text-slate-300 dark:hover:aip-text-slate-100 aip-rounded"
     onClick={onClick}
   >
     {children}

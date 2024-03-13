@@ -13,31 +13,31 @@ export function ModalDisplay({
   children,
 }: ModalDisplayProps): React.JSX.Element {
   return <Transition.Root show={isShowing} as={Fragment}>
-    <Dialog as="div" className="relative z-50" onClose={onClose}>
+    <Dialog as="div" className="aip-relative aip-z-50" onClose={onClose}>
       <Transition.Child
         as={Fragment}
-        enter="ease-out duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="ease-in duration-200"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
+        enter="aip-ease-out aip-duration-300"
+        enterFrom="aip-opacity-0"
+        enterTo="aip-opacity-100"
+        leave="aip-ease-in aip-duration-200"
+        leaveFrom="aip-opacity-100"
+        leaveTo="aip-opacity-0"
       >
-        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+        <div className="aip-fixed aip-inset-0 aip-bg-gray-500 aip-bg-opacity-75 aip-transition-opacity" />
       </Transition.Child>
   
-      <div className="fixed inset-0 z-50 w-screen h-full overflow-y-auto mx-auto py-[5vh]">
+      <div className="aip-fixed aip-inset-0 aip-z-50 aip-w-screen aip-h-full aip-overflow-y-auto aip-mx-auto aip-py-[5vh]">
         <Transition.Child
           as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          enterTo="opacity-100 translate-y-0 sm:scale-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-          leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          enter="aip-ease-out aip-duration-300"
+          enterFrom="aip-opacity-0 aip-translate-y-4 sm:aip-translate-y-0 sm:aip-scale-95"
+          enterTo="aip-opacity-100 aip-translate-y-0 sm:aip-scale-100"
+          leave="aip-ease-in aip-duration-200"
+          leaveFrom="aip-opacity-100 aip-translate-y-0 sm:aip-scale-100"
+          leaveTo="aip-opacity-0 aip-translate-y-4 sm:aip-translate-y-0 sm:aip-scale-95"
         >
 
-          <Dialog.Panel className="transform overflow-auto max-h-[90vh] w-fit mx-auto">
+          <Dialog.Panel className="aip-transform aip-overflow-auto aip-max-h-[90vh] aip-w-fit aip-mx-auto">
             {children}
           </Dialog.Panel>
         </Transition.Child>

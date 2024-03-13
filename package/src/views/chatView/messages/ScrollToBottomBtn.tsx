@@ -20,8 +20,8 @@ export function ScrollToBottomBtn({
   return <button
     ref={ref}
     onClick={() => scrollToBottom()}
-    className="absolute z-50 bottom-[64px] right-3 h-6 w-6 rounded-full p-[2px] border bg-white transition-all hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 "
+    className="aip-absolute aip-z-50 aip-bottom-[64px] aip-right-3 aip-h-6 aip-w-6 aip-rounded-full aip-p-[2px] aip-border aip-bg-white aip-transition-all hover:aip-bg-gray-100 dark:aip-border-gray-700 dark:aip-bg-gray-800 dark:hover:aip-bg-gray-700 "
   >
-    <ChevronDownIcon className="mt-[2px]" />
+    <ChevronDownIcon className="aip-mt-[2px]" />
   </button>
 }

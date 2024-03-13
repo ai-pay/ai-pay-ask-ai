@@ -8,6 +8,7 @@ import typography from "@tailwindcss/typography"
 export default {
   // darkMode: "class",
   content: ["./src/**/*.{tsx,ts,js,jsx}"],
+  important: true,
   theme: {
     extend: {
       colors: {

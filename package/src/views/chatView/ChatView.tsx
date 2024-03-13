@@ -18,9 +18,9 @@ export function ChatView({
   setChatConfig(chatConfig);
 
   return <ScrollToBottom 
-    className="scrollbar-custom max-h-[86vh] relative"
-    scrollViewClassName="max-h-[86vh]"
-    followButtonClassName="hidden"
+    className="scrollbar-custom aip-max-h-[86vh] aip-relative"
+    scrollViewClassName="aip-max-h-[86vh]"
+    followButtonClassName="aip-hidden"
   >
     <RequiresActiveSessionWrapper>
       {hasMessages ? (

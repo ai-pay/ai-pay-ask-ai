@@ -28,17 +28,17 @@ export function SearchBarModalButton({
 
   return <>
     <button 
-      className="flex w-60 justify-between text-base text-black dark:text-white items-center py-1.5 px-2 bg-neutral-600/50 rounded-lg
-      border-[1.5px] border-neutral-500/50 hover:border-neutral-700 dark:hover:border-neutral-300 transition-colors"
+      className="aip-flex aip-w-60 aip-justify-between aip-text-base aip-text-black dark:aip-text-white aip-items-center aip-py-1.5 aip-px-2 aip-bg-neutral-600/50 aip-rounded-lg
+      aip-border-[1.5px] aip-border-neutral-500/50 hover:aip-border-neutral-700 dark:hover:aip-border-neutral-300 aip-transition-colors"
       onClick={() => setIsShowing(true)}
     >
-      <div className="flex gap-2 items-center">
-        <MagnifyingGlassIcon className="h-4 w-4 text-white" />
+      <div className="aip-flex aip-gap-2 aip-items-center">
+        <MagnifyingGlassIcon className="aip-h-4 aip-w-4 aip-text-white" />
         <p>{text}</p>
       </div>
 
       {commandKOpen && <p
-        className="bg-gray-800/50 py-0.5 px-1 rounded-md text-sm text-gray-800/90 dark:bg-gray-800/60 dark:text-gray-200 border border-neutral-400/75"
+        className="aip-bg-gray-800/50 aip-py-0.5 aip-px-1 aip-rounded-md aip-text-sm aip-text-gray-800/90 dark:aip-bg-gray-800/60 dark:aip-text-gray-200 aip-border aip-border-neutral-400/75"
       >⌘K</p>}
     </button>
     <AskAiModal 

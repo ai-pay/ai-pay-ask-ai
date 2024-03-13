@@ -11,7 +11,7 @@ export function DisplayKnowledgeBaseSources({
     return null
   }
 
-  return <div className="flex flex-wrap gap-2 items-center border-t-gray-500/50 border-t pt-2">
+  return <div className="aip-flex aip-flex-wrap aip-gap-2 aip-items-center aip-border-t-gray-500/50 aip-border-t aip-pt-2">
     <p>Sources: </p> 
     {sources.map((source, index) => {
       return <a 
@@ -19,7 +19,7 @@ export function DisplayKnowledgeBaseSources({
         href={source.url} 
         target="_blank" 
         rel="noopener noreferrer"
-        className="py-1 px-2 rounded-lg bg-slate-800/60 border border-slate-500/50 hover:border-slate-500"
+        className="aip-py-1 aip-px-2 aip-rounded-lg aip-bg-slate-800/60 aip-border aip-border-slate-500/50 hover:aip-border-slate-500"
       >
         {source.title}
       </a>

@@ -25,7 +25,7 @@ export function AssistantMessageActionButtons({
     reloadAnswer
   } = useReloadAnswer();
 
-  return <div className="absolute flex gap-2 -bottom-1 right-0 translate-y-full transition-opacity opacity-0 group-hover:opacity-100">
+  return <div className="aip-absolute aip-flex aip-gap-2 -aip-bottom-1 aip-right-0 aip-translate-y-full aip-transition-opacity aip-opacity-0 group-hover:aip-opacity-100">
     <ActionIconButton
       onClick={() => { return }}
     > 
@@ -34,9 +34,9 @@ export function AssistantMessageActionButtons({
         onCopy={copy}
       >
         {copied ? 
-          <ClipboardDocumentCheckIcon className="h-4 w-4 text-green-500" />
+          <ClipboardDocumentCheckIcon className="aip-h-4 aip-w-4 aip-text-green-500" />
           :   
-          <ClipboardIcon className="h-4 w-4" />
+          <ClipboardIcon className="aip-h-4 aip-w-4" />
         }
       </CopyToClipboard>      
     </ActionIconButton>
@@ -45,7 +45,7 @@ export function AssistantMessageActionButtons({
         reloadAnswer(answerId)
       }}
     > 
-      <ArrowPathIcon className="h-4 w-4" />
+      <ArrowPathIcon className="aip-h-4 aip-w-4" />
     </ActionIconButton>
   </div>
 }

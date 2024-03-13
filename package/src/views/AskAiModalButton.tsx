@@ -12,11 +12,11 @@ export function AskAiModalButton({
 
   return <>
     <button 
-      className="flex text-lg text-white items-center gap-2 py-3 px-5 bg-neutral-800/75 hover:bg-neutral-800 transition-colors rounded-full"
+      className="aip-flex aip-text-lg aip-text-white aip-items-center aip-gap-2 aip-py-3 aip-px-5 aip-bg-neutral-800/75 hover:aip-bg-neutral-800 aip-transition-colors aip-rounded-full"
       onClick={() => setIsShowing(true)}
     >
       <p>Ask AI</p>
-      <SparklesIcon className="h-6 w-6 text-blue-400" />
+      <SparklesIcon className="aip-h-6 aip-w-6 aip-text-blue-400" />
     </button>
     <AskAiModal 
       isShowing={isShowing} 

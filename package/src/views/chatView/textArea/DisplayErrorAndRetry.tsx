@@ -12,7 +12,7 @@ export function DisplayErrorAndRetry(): React.JSX.Element | null {
     return null
   }
 
-  return <div className="flex gap-2 items-center text-white px-2 py-1 bg-red-900/90 outline outline-2 outline-red-500 rounded-lg">
+  return <div className="aip-flex aip-gap-2 aip-items-center aip-text-white aip-px-2 aip-py-1 aip-bg-red-900/90 aip-outline aip-outline-2 aip-outline-red-500 aip-rounded-lg">
     <p>
       {error}
     </p>
@@ -20,7 +20,7 @@ export function DisplayErrorAndRetry(): React.JSX.Element | null {
       onClick={retryLastQuestion}
     >
       <p
-        className="px-2"
+        className="aip-px-2"
       >Retry</p>
     </ActionIconButton>
   </div>

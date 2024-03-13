@@ -28,8 +28,8 @@ export function ChatViewTextArea(): React.JSX.Element {
   }
 
   return <>
-    <div className="flex flex-col gap-3 opacity-0 -z-50 w-full p-3 text-base pt-10">
-      <div className="flex justify-around px-10">
+    <div className="aip-flex aip-flex-col aip-gap-3 aip-opacity-0 -aip-z-50 aip-w-full aip-p-3 aip-text-base aip-pt-10">
+      <div className="aip-flex aip-justify-around aip-px-10">
         <DisplayErrorAndRetry />
       </div>
       <TextareaAutosize 
@@ -41,12 +41,12 @@ export function ChatViewTextArea(): React.JSX.Element {
       />
     </div>
     <div className={cn(
-      "absolute bottom-2 left-2 right-2 bg-zinc-700 bg-opacity-95 backdrop-blur-xl rounded-xl flex items-end border border-neutral-500 focus-within:border-neutral-400 transition-colors flex-shrink-0",
-      sessionState !== "ACTIVE" ? "cursor-not-allowed opacity-50" : "",
+      "aip-absolute aip-bottom-2 aip-left-2 aip-right-2 aip-bg-zinc-700 aip-bg-opacity-95 aip-backdrop-blur-xl aip-rounded-xl aip-flex aip-items-end aip-border aip-border-neutral-500 focus-within:aip-border-neutral-400 aip-transition-colors aip-flex-shrink-0",
+      sessionState !== "ACTIVE" ? "aip-cursor-not-allowed aip-opacity-50" : "",
     )}>
       <TextareaAutosize 
         className={cn(
-          'bg-transparent rounded-lg resize-none w-full min-h-full p-3 outline-none text-base text-black dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500',
+          'aip-bg-transparent aip-rounded-lg aip-resize-none aip-w-full aip-min-h-full aip-p-3 aip-outline-none aip-text-base aip-text-black dark:aip-text-white aip-placeholder-neutral-400 dark:aip-placeholder-neutral-500',
           sessionState !== "ACTIVE" ? "cursor-not-allowed" : "",
         )}
         disabled={sessionState !== "ACTIVE"}
@@ -72,7 +72,7 @@ export function ChatViewTextArea(): React.JSX.Element {
         onclick={function (): void {
           sendQuestion(input);
         } } />
-      <div className="absolute flex justify-around -top-3 left-0 right-0 -translate-y-full px-10">
+      <div className="aip-absolute aip-flex aip-justify-around -aip-top-3 aip-left-0 aip-right-0 -aip-translate-y-full aip-px-10">
         <DisplayErrorAndRetry />
       </div>
     </div>

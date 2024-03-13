@@ -27,7 +27,7 @@ export function NoMessages(): React.JSX.Element {
     sendQuestion
   } = useSendQuestion();
 
-  return <div className="flex flex-col items-start p-5 pb-20">
+  return <div className="aip-flex aip-flex-col aip-items-start aip-p-5 aip-pb-20">
     {initialPrompt && <AssistantMessage 
       content={initialPrompt}
       answerId={undefined}
@@ -35,13 +35,13 @@ export function NoMessages(): React.JSX.Element {
     />}
 
     <h3
-      className="text-lg font-semibold dark:text-gray-400 mt-10 mb-2"
+      className="aip-text-lg aip-font-semibold dark:aip-text-gray-400 aip-mt-10 aip-mb-2"
     >Example Questions</h3>
-    <div className="flex gap-2 flex-wrap">
+    <div className="aip-flex aip-gap-2 aip-flex-wrap">
       {displayQuestions.map((question, index) => {
         return <div 
           key={index} 
-          className="text-sm font-semibold cursor-pointer text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-slate-800/50 rounded-md px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600/80 transition-colors"
+          className="aip-text-sm aip-font-semibold aip-cursor-pointer aip-text-gray-900 dark:aip-text-gray-100 aip-bg-gray-100 dark:aip-bg-slate-800/50 aip-rounded-md aip-px-4 aip-py-2 hover:aip-bg-gray-200 dark:hover:aip-bg-gray-600/80 aip-transition-colors"
           onClick={() => sendQuestion(question)}
         >
           {question}

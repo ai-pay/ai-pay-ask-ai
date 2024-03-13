@@ -17,19 +17,19 @@ export function UserQuestion({
   const {changeQuestion} = useChangeQuestion();
 
   if (isEditing) {
-    return <div className="flex flex-col gap-2 py-5 items-center">
+    return <div className="aip-flex aip-flex-col aip-gap-2 aip-py-5 aip-items-center">
       <input
         type="text"
         autoFocus
-        className="w-full appearance-none p-3 bg-slate-800/50 rounded-lg border-transparent focus:border-white border-2 whitespace-break-spaces text-wrap break-words text-gray-800 dark:text-gray-200"
+        className="aip-w-full aip-appearance-none aip-p-3 aip-bg-slate-800/50 aip-rounded-lg aip-border-transparent focus:aip-border-white aip-border-2 aip-whitespace-break-spaces aip-text-wrap aip-break-words aip-text-gray-800 dark:aip-text-gray-200"
         value={editingText}
         onChange={(e) => {
           setEditingText(e.target.value);
         }}
       />
-      <div className="flex gap-2">
+      <div className="aip-flex aip-gap-2">
         <button
-          className="py-1 px-3 bg-slate-800/50 hover:bg-slate-800 text-black dark:text-slate-300 dark:hover:text-slate-100 rounded-lg"
+          className="aip-py-1 aip-px-3 aip-bg-slate-800/50 hover:aip-bg-slate-800 aip-text-black dark:aip-text-slate-300 dark:hover:aip-text-slate-100 aip-rounded-lg"
           onClick={() => {
             changeQuestion(questionId, editingText)
             setIsEditing(false)
@@ -38,7 +38,7 @@ export function UserQuestion({
           Submit
         </button>
         <button
-          className="py-1 px-3 bg-slate-800/50 hover:bg-slate-800 text-black dark:text-slate-300 dark:hover:text-slate-100 rounded-lg"
+          className="aip-py-1 aip-px-3 aip-bg-slate-800/50 hover:aip-bg-slate-800 aip-text-black dark:aip-text-slate-300 dark:hover:aip-text-slate-100 aip-rounded-lg"
           onClick={() => setIsEditing(false)}
         >
           Cancel
@@ -47,18 +47,18 @@ export function UserQuestion({
     </div>
   }
 
-  return <div className="group flex p-5 items-center">
-    <p className="w-full appearance-none whitespace-break-spaces text-wrap break-words text-gray-800 dark:text-gray-200">
+  return <div className="aip-group aip-flex aip-p-5 aip-items-center">
+    <p className="aip-w-full aip-appearance-none aip-whitespace-break-spaces aip-text-wrap aip-break-words aip-text-gray-800 dark:aip-text-gray-200">
       {content}
     </p>
-    <div className="hidden group-hover:block">
+    <div className="aip-hidden group-hover:aip-block">
       <ActionIconButton
         onClick={() => {
           setEditingText(content)
           setIsEditing(true)
         }}
       > 
-        <PencilIcon className="h-3.5 w-3.5" />
+        <PencilIcon className="aip-h-3.5 aip-w-3.5" />
       </ActionIconButton>
     </div>
   </div>

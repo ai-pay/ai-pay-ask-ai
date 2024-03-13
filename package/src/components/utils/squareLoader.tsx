@@ -1,7 +1,7 @@
 
 export function SquareLoader(): React.JSX.Element {
   return <svg 
-    className="squareLoader-container w-6 h-6"
+    className="squareLoader-container aip-w-6 aip-h-6"
     x="0px" 
     y="0px" 
     viewBox="0 0 37 37" 
