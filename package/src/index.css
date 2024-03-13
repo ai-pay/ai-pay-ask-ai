@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scrollbar-custom > * {
+  scrollbar-width: thin;
+  scrollbar-color: #818181c2 transparent;
+}
+
+/* width */
+.scrollbar-custom > *::-webkit-scrollbar {
+  width: 7px;
+  overflow: hidden;
+}
+
+/* Track */
+.scrollbar-custom > *::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Handle */
+.scrollbar-custom > *::-webkit-scrollbar-thumb {
+  background: #818181c2;
+  opacity: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.squareLoader-container {
+  --uib-color: white;
+  --uib-speed: 1s;
+  --uib-bg-opacity: .1;
+  transform-origin: center;
+  overflow: visible;
+}
+
+.squareLoader-car {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 15, 85;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: squareLoader-travel var(--uib-speed) linear infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.squareLoader-track {
+  stroke: var(--uib-color);
+  opacity: var(--uib-bg-opacity);
+  transition: stroke 0.5s ease;
+}
+
+@keyframes squareLoader-travel {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+
+.dotPulse-container {
+  --uib-size: 43px;
+  --uib-color: white;
+  --uib-speed: 1.3s;
+  --uib-dot-size: calc(var(--uib-size) * 0.24);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--uib-dot-size);
+  width: var(--uib-size);
+}
+
+.dotPulse-dot,
+.dotPulse-container::before,
+.dotPulse-container::after {
+  content: '';
+  display: block;
+  height: var(--uib-dot-size);
+  width: var(--uib-dot-size);
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  transform: scale(0);
+  transition: background-color 0.3s ease;
+}
+
+.dotPulse-container::before {
+  animation: dotPulse-pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.375)
+    infinite;
+}
+
+.dotPulse-dot {
+  animation: dotPulse-pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.25)
+    infinite both;
+}
+
+.dotPulse-container::after {
+  animation: dotPulse-pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.125)
+    infinite;
+}
+
+@keyframes dotPulse-pulse {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
