@@ -41,7 +41,7 @@ export function ChatViewTextArea(): React.JSX.Element {
       />
     </div>
     <div className={cn(
-      "aip-absolute aip-bottom-2 aip-left-2 aip-right-2 aip-bg-zinc-700 aip-bg-opacity-95 aip-backdrop-blur-xl aip-rounded-xl aip-flex aip-items-end aip-border aip-border-neutral-500 focus-within:aip-border-neutral-400 aip-transition-colors aip-flex-shrink-0",
+      "aip-absolute aip-bottom-2 aip-left-2 aip-right-2 aip-bg-zinc-100/90 dark:aip-bg-zinc-700/90 aip-backdrop-blur-xl aip-rounded-xl aip-flex aip-items-end aip-border aip-border-neutral-300 dark:aip-border-neutral-500 focus-within:aip-border-neutral-400 aip-transition-colors aip-flex-shrink-0",
       sessionState !== "ACTIVE" ? "aip-cursor-not-allowed aip-opacity-50" : "",
     )}>
       <TextareaAutosize 

@@ -19,7 +19,7 @@ export function DisplayKnowledgeBaseSources({
         href={source.url} 
         target="_blank" 
         rel="noopener noreferrer"
-        className="aip-py-1 aip-px-2 aip-rounded-lg aip-bg-slate-800/60 aip-border aip-border-slate-500/50 hover:aip-border-slate-500"
+        className="aip-py-1 aip-px-2 aip-rounded-lg aip-bg-slate-50/75 hover:aip-bg-white dark:aip-bg-slate-800/60 dark:hover:aip-bg-slate-800/65 aip-border aip-border-slate-500/50 hover:aip-border-slate-500 aip-transition-colors"
       >
         {source.title}
       </a>

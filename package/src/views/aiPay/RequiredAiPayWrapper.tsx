@@ -30,7 +30,7 @@ export function RequiredAiPayWrapper({
           href="https://chromewebstore.google.com/detail/ai-pay/igghgdjfklipjmgldcdfnpppgaijmhfg" 
           target="_blank" 
           rel="noreferrer" 
-          className="aip-py-2 aip-px-6 aip-rounded-lg aip-text-lg aip-font-bold !aip-bg-opacity-80 dark:aip-bg-gray-500 dark:hover:aip-bg-gray-400 aip-text-white dark:aip-text-gray-100 aip-transition-all"
+          className="aip-py-2 aip-px-6 aip-rounded-lg aip-text-lg aip-font-bold !aip-bg-opacity-80 aip-bg-gray-500 hover:aip-bg-gray-400 aip-text-white dark:aip-text-gray-100 aip-transition-all"
         >
           Download AI Pay - Free $5 Credit
         </a>

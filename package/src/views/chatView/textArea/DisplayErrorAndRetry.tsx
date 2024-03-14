@@ -12,7 +12,7 @@ export function DisplayErrorAndRetry(): React.JSX.Element | null {
     return null
   }
 
-  return <div className="aip-flex aip-gap-2 aip-items-center aip-text-white aip-px-2 aip-py-1 aip-bg-red-900/90 aip-outline aip-outline-2 aip-outline-red-500 aip-rounded-lg">
+  return <div className="aip-flex aip-gap-2 aip-items-center aip-text-black dark:aip-text-white aip-px-2 aip-py-1 aip-bg-red-300/90 dark:aip-bg-red-900/90 aip-outline aip-outline-2 aip-outline-red-500 aip-rounded-lg">
     <p>
       {error}
     </p>

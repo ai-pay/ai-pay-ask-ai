@@ -2,6 +2,7 @@
 import { create } from "zustand";
 
 export type ChatConfig = {
+  colorMode?: "light" | "dark" | "auto"
   initialAssistantQuestion?: string
   defaultQuestions?: string[]
   questionBoxPlaceholder?: string

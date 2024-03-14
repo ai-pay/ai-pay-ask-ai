@@ -29,16 +29,13 @@
 }
 
 .squareLoader-container {
-  --uib-color: white;
   --uib-speed: 1s;
-  --uib-bg-opacity: .1;
   transform-origin: center;
   overflow: visible;
 }
 
 .squareLoader-car {
   fill: none;
-  stroke: var(--uib-color);
   stroke-dasharray: 15, 85;
   stroke-dashoffset: 0;
   stroke-linecap: round;
@@ -48,8 +45,6 @@
 }
 
 .squareLoader-track {
-  stroke: var(--uib-color);
-  opacity: var(--uib-bg-opacity);
   transition: stroke 0.5s ease;
 }
 
@@ -66,7 +61,6 @@
 
 .dotPulse-container {
   --uib-size: 43px;
-  --uib-color: white;
   --uib-speed: 1.3s;
   --uib-dot-size: calc(var(--uib-size) * 0.24);
   position: relative;
@@ -77,30 +71,27 @@
   width: var(--uib-size);
 }
 
-.dotPulse-dot,
-.dotPulse-container::before,
-.dotPulse-container::after {
+.dotPulse-dot {
   content: '';
   display: block;
   height: var(--uib-dot-size);
   width: var(--uib-dot-size);
   border-radius: 50%;
-  background-color: var(--uib-color);
   transform: scale(0);
   transition: background-color 0.3s ease;
 }
 
-.dotPulse-container::before {
+.dotPulse-dot1 {
   animation: dotPulse-pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.375)
     infinite;
 }
 
-.dotPulse-dot {
+.dotPulse-dot2 {
   animation: dotPulse-pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.25)
     infinite both;
 }
 
-.dotPulse-container::after {
+.dotPulse-dot3 {
   animation: dotPulse-pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.125)
     infinite;
 }

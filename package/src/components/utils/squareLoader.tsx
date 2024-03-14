@@ -8,13 +8,13 @@ export function SquareLoader(): React.JSX.Element {
     preserveAspectRatio="xMidYMid meet"
   >
     <path 
-      className="squareLoader-track" 
+      className="squareLoader-track aip-stroke-neutral-900/10 dark:aip-stroke-white/10" 
       fill="none" 
       strokeWidth="8" 
       pathLength="100" d="M0.37 18.5 C0.37 5.772 5.772 0.37 18.5 0.37 S36.63 5.772 36.63 18.5 S31.228 36.63 18.5 36.63 S0.37 31.228 0.37 18.5">
     </path>
     <path 
-      className="squareLoader-car" 
+      className="squareLoader-car aip-stroke-neutral-900 dark:aip-stroke-white" 
       fill="none" 
       strokeWidth="8" 
       pathLength="100" 

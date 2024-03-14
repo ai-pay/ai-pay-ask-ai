@@ -15,10 +15,10 @@ export function ChatViewSendQuestionButton({
 }: ChatViewSendQuestionButtonProps): React.JSX.Element {
   return <button 
     className={cn(
-      "aip-zinc-700 aip-rounded-xl aip-p-1 aip-items-center aip-justify-center aip-flex aip-w-10 aip-h-10 aip-m-1",
+      "aip-rounded-xl aip-p-1 aip-items-center aip-justify-center aip-flex aip-w-10 aip-h-10 aip-m-1",
       "aip-border-none",
-      "aip-text-neutral-100",
-      "hover:aip-bg-zinc-600",
+      "aip-text-neutral-700 dark:aip-text-neutral-100",
+      "hover:aip-bg-zinc-300 dark:hover:aip-bg-zinc-600",
       disabled ? "aip-cursor-not-allowed" : "aip-cursor-pointer",
     )}
     disabled={loading || disabled}

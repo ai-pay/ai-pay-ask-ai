@@ -1,5 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { cn } from "../../utils/cn";
+import { useColorMode } from "../../services/useColorMode";
 
 interface ModalDisplayProps {
   isShowing: boolean;
@@ -12,8 +14,13 @@ export function ModalDisplay({
   onClose,
   children,
 }: ModalDisplayProps): React.JSX.Element {
+  const isDarkMode = useColorMode() === "dark";
+
   return <Transition.Root show={isShowing} as={Fragment}>
-    <Dialog as="div" className="aip-relative aip-z-50" onClose={onClose}>
+    <Dialog as="div" className={cn(
+      "aip-relative aip-z-50",
+      isDarkMode ? "aip-dark" : ""
+    )} onClose={onClose}>
       <Transition.Child
         as={Fragment}
         enter="aip-ease-out aip-duration-300"

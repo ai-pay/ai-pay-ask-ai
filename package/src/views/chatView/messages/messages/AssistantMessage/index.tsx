@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 
 import { useCallback, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -97,8 +96,8 @@ export function AssistantMessage({
     {loading && content === "" && <DotPulse />}
 
     <Markdown 
-      className="aip-w-full aip-rounded-r-xl aip-rounded-tl-xl aip-mr-auto aip-prose aip-text-gray-800 dark:aip-text-gray-200 aip-max-w-none max-sm:prose-sm dark:prose-invert prose-headings:font-semibold prose-h1:aip-text-lg prose-h2:aip-text-base prose-h3:aip-text-base prose-pre:aip-bg-gray-800 dark:prose-pre:aip-bg-gray-900 [&>pre]:aip-p-0 [&>pre]:aip-bg-transparent"
-      remarkPlugins={[remarkGfm]}
+      className="aip-w-full aip-rounded-r-xl aip-rounded-tl-xl aip-mr-auto aip-prose aip-text-gray-800 dark:aip-text-gray-200 aip-max-w-none max-sm:aip-prose-sm dark:aip-prose-invert prose-headings:aip-font-semibold prose-h1:aip-text-lg prose-h2:aip-text-base prose-h3:aip-text-base prose-pre:aip-bg-gray-800 dark:prose-pre:aip-bg-gray-900 [&>pre]:aip-p-0 [&>pre]:aip-bg-transparent dark:[&>pre]:aip-bg-transparent"
+      remarkPlugins={[]}
       components={{
         code(props) {
           const {children, className} = props;

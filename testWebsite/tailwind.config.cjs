@@ -9,6 +9,7 @@ export default {
   // darkMode: "class",
   content: ["./src/**/*.{tsx,ts,js,jsx}"],
   important: true,
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
