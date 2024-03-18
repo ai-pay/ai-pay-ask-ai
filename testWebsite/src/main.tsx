@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { AskAiModalButton, SearchBarModalButton } from 'ai-pay-ask-ai'
+import { AskAiModal, AskAiModalButton, SearchBarModalButton, setChatConfig } from 'ai-pay-ask-ai'
 import 'ai-pay-ask-ai/dist/index.css'
-import { setChatConfig } from 'ai-pay-ask-ai'
 
 setChatConfig({
   colorMode: "dark",
@@ -17,8 +16,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <div className="dark">
       <div className="flex flex-col items-center justify-center gap-8 h-screen w-screen">
         <AskAiModalButton />
-
         <SearchBarModalButton />
+        <AskAiModal isShowing={true} onClose={function (): void {
+          throw new Error('Function not implemented.')
+        } } />
       </div>
     </div>
 

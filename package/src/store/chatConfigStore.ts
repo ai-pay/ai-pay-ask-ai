@@ -18,4 +18,4 @@ export const useChatConfigStore = create<MessagesStore>()((set) => ({
   setConfig: (config: ChatConfig) => set({
     config: config,
   }),
-}))
+}));

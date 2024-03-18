@@ -4,6 +4,12 @@ import Markdown from "react-markdown";
 import { useCallback, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { ClipboardIcon, ClipboardDocumentCheckIcon } from "@heroicons/react/24/outline";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
+import a11yDark from "react-syntax-highlighter/dist/esm/styles/prism/a11y-dark";
+import { DotPulse } from "../../../../../components/utils/DotPulse";
+import { KnowledgeBaseSource } from "ai-pay/models";
+import { DisplayKnowledgeBaseSources } from "./displaySources";
+import { AssistantMessageActionButtons } from "./actionButtons";
 
 interface CopyToClipboardProps {
   code: string;
@@ -38,13 +44,6 @@ export function CopyCodeToClipboard({
     </CopyToClipboard>
   </div>;
 }
-
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
-import a11yDark from "react-syntax-highlighter/dist/esm/styles/prism/a11y-dark";
-import { DotPulse } from "../../../../../components/utils/DotPulse";
-import { KnowledgeBaseSource } from "ai-pay/models";
-import { DisplayKnowledgeBaseSources } from "./displaySources";
-import { AssistantMessageActionButtons } from "./actionButtons";
 
 interface ChatBubbleCodeBlockProps {
   code: string;
@@ -88,7 +87,7 @@ export function AssistantMessage({
   sources,
 }: AssistantMessageProps): React.JSX.Element {
   return <div 
-    className="aip-relative aip-group aip-flex aip-flex-col aip-gap-3 aip-min-h-[calc(2rem+theme(spacing[3.5])*2)] aip-min-w-[60px] aip-break-words aip-rounded-2xl aip-border aip-border-gray-100 aip-bg-gradient-to-br aip-from-gray-50 aip-px-5 aip-py-3.5 aip-text-gray-600 prose-pre:aip-my-2 dark:aip-border-gray-500/50 dark:aip-from-slate-800/50 dark:aip-text-gray-300"
+    className="aip-relative aip-group aip-flex aip-flex-col aip-gap-3 aip-min-h-[calc(2rem+theme(spacing[3.5])*2)] aip-min-w-[60px] aip-break-words aip-rounded-2xl aip-border aip-border-gray-100 aip-bg-gradient-to-br aip-from-gray-200 aip-px-5 aip-py-3.5 aip-text-gray-600 prose-pre:aip-my-2 aip-border-gray-400/50 dark:aip-border-gray-500/50 dark:aip-from-slate-700/75 dark:aip-text-gray-300"
   >
 
     {progressPrompt && content === "" && <h3>{progressPrompt}</h3>}

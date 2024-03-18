@@ -13,7 +13,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function NoMessages(): React.JSX.Element {
-  const initialPrompt = useChatConfigStore((state) => state.config?.initialAssistantQuestion ?? "Hey, I'm an AI assistant here to help you with your questions! What would you like to know?")
+  const initialPrompt = useChatConfigStore((state) => state.config?.initialAssistantQuestion) ?? "Hey, I'm an AI assistant here to help you with your questions! What would you like to know?"
   const defaultQuestions = useChatConfigStore((state) => state.config?.defaultQuestions) ?? [
     "How do i get started with this product?", 
     "What are the benefits of this product?", 

@@ -2,16 +2,23 @@ import { useEffect, useState } from "react"
 import { AskAiModal } from "./AskAiModal"
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { useColorMode } from "../services/useColorMode"
+import { ChatConfig, useChatConfigStore } from "../store/chatConfigStore"
 
 interface SearchBarModalButtonProps {
   text?: string
   commandKOpen?: boolean
+  chatConfig?: ChatConfig
 }
 
 export function SearchBarModalButton({
   text = "Ask AI ...",
   commandKOpen = true,
+  chatConfig,
 }: SearchBarModalButtonProps): React.JSX.Element {
+  if (chatConfig) {
+    useChatConfigStore.getState().setConfig(chatConfig)
+  }
+
   const [isShowing, setIsShowing] = useState(false)
   const isDarkMode = useColorMode() === "dark";
 

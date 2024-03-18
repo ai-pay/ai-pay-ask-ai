@@ -1,6 +1,8 @@
 import { useCallback } from "react"
 import { useMessagesStore } from "../store/messagesStore"
 import { KnowledgeBaseChatRequest, KnowledgeBaseSource, SupportedChatCompletionMessageParam, knowledgeBaseChatStream } from "ai-pay"
+import { systemPromptContextChunkTemplate, systemPromptTemplate } from "../utils/systemContextPrompts"
+import { replaceWithLinks } from "../utils/replaceWithLinks"
 
 export function useSendQuestion(): {
   sendQuestion: (message: string) => void
@@ -15,7 +17,9 @@ export function useSendQuestion(): {
   const setError = useMessagesStore((state) => state.setError)
 
   const sendQuestion = useCallback(async (question: string) => {
-    if (useMessagesStore.getState().loading) {
+    if (
+      useMessagesStore.getState().loading
+    ) {
       return
     }
 
@@ -34,9 +38,11 @@ export function useSendQuestion(): {
       const chatHistory: SupportedChatCompletionMessageParam[] = useMessagesStore.getState().messages.map((message) => ({
         content: message.content,
         role: message.profile,
-      }))
+      })) ?? []
 
       const request: KnowledgeBaseChatRequest = {
+        systemPromptTemplate,
+        systemPromptContextChunkTemplate,
         responseGenerationModel: "gpt-3.5-turbo",
         chatHistory,
         question,
@@ -51,13 +57,12 @@ export function useSendQuestion(): {
       } = await knowledgeBaseChatStream(
         request,
         (chunk) => {
-          if (chunk.type !== "text") {
-            console.log("knowledgeBaseChatStream chunk: ", chunk)
-          }
-
           if (chunk.type === "text") {
             streamResponse += chunk.textChunk
-            setStreamText(streamResponse)
+            setStreamText(replaceWithLinks(
+              streamResponse,
+              sources.map((source) => source.url)
+            ))
           } 
           else if (chunk.type === "sources") {
             sources = chunk.sources
@@ -78,7 +83,10 @@ export function useSendQuestion(): {
         appendMessage({
           id: Date.now().toString(),
           profile: "assistant",
-          content: streamResponse,
+          content: replaceWithLinks(
+            streamResponse,
+            sources.map((source) => source.url)
+          ),
           sources,
         })
       }

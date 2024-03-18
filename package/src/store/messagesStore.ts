@@ -38,7 +38,7 @@ interface MessagesStore {
 
 export const useMessagesStore = create<MessagesStore>()((set) => ({
   messages: getMessagesFromLocalStorage(),
-
+  
   streamText: undefined,
   progressUpdate: undefined,
   streamedSources: [],
@@ -51,38 +51,38 @@ export const useMessagesStore = create<MessagesStore>()((set) => ({
   setStreamedSources: (refs: KnowledgeBaseSource[] | undefined) => set({
     streamedSources: refs,
   }),
-
+  
   loading: false,
   setLoading: (loading: boolean) => set({
     loading: loading,
   }),
-
+  
   error: undefined,
   setError: (error: string | undefined) => set({
     error: error,
   }),
-
+  
   appendMessage: (message: ChatMessage) => set((state) => {
     const newMessages = [...state.messages, message];
-
+  
     if (message.profile === 'assistant') {
       saveMessagesToLocalStorage(newMessages);
     }
-
+  
     return {
       messages: newMessages,
     }
   }),
-
+  
   deleteMessagesIncludingAfterId: (id: string) => set((state) => {
     if (state.messages.length === 0) return {};
     const index = state.messages.findIndex((message: ChatMessage) => message.id === id);
-
+  
     return {
       messages: state.messages.slice(0, index)
     }
   }),
-
+  
   resetMessages: () => set(() => {
     saveMessagesToLocalStorage([]);
     return {

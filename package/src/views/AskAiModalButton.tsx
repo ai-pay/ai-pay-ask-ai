@@ -2,8 +2,16 @@ import { SparklesIcon } from "@heroicons/react/24/solid"
 import { useState } from "react"
 import { AskAiModal } from "./AskAiModal"
 import { useColorMode } from "../services/useColorMode"
+import { ChatConfig, useChatConfigStore } from "../store/chatConfigStore"
 
-export function AskAiModalButton(): React.JSX.Element {
+export function AskAiModalButton({
+  chatConfig,
+}: {
+  chatConfig?: ChatConfig,
+}): React.JSX.Element {
+  if (chatConfig) {
+    useChatConfigStore.getState().setConfig(chatConfig)
+  }
   const [isShowing, setIsShowing] = useState(false)
   const isDarkMode = useColorMode() === "dark";
 

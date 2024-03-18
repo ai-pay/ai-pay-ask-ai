@@ -12,7 +12,7 @@ import { useChatConfigStore } from "../../../store/chatConfigStore";
 export function ChatViewTextArea(): React.JSX.Element {
   const sessionState = useSessionState();
 
-  const placeholder = useChatConfigStore((state) => state.config?.questionBoxPlaceholder ?? "Ask a question...");
+  const placeholder = useChatConfigStore((state) => state.config?.questionBoxPlaceholder) ?? "Ask a question...";
 
   const loading = useMessagesStore((state) => state.loading);
   const {
@@ -67,7 +67,7 @@ export function ChatViewTextArea(): React.JSX.Element {
         }}
       />
       <ChatViewSendQuestionButton
-        loading={loading}
+        loading={loading ?? false}
         disabled={loading || input === "" || sessionState !== "ACTIVE"}
         onclick={function (): void {
           sendQuestion(input);
