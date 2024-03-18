@@ -1,6 +1,6 @@
 {
   "name": "@ai-pay/ask-ai",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A React component for interacting with the AI Pay Knowledge Base.",
   "files": [
     "dist",

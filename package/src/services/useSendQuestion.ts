@@ -3,6 +3,7 @@ import { useMessagesStore } from "../store/messagesStore"
 import { KnowledgeBaseChatRequest, KnowledgeBaseSource, SupportedChatCompletionMessageParam, knowledgeBaseChatStream } from "ai-pay"
 import { systemPromptContextChunkTemplate, systemPromptTemplate } from "../utils/systemContextPrompts"
 import { replaceWithLinks } from "../utils/replaceWithLinks"
+import { useChatConfigStore } from "../store/chatConfigStore"
 
 export function useSendQuestion(): {
   sendQuestion: (message: string) => void
@@ -40,10 +41,12 @@ export function useSendQuestion(): {
         role: message.profile,
       })) ?? []
 
+      const model = useChatConfigStore.getState().config?.chatModel ?? "gpt-4-turbo-preview"
+
       const request: KnowledgeBaseChatRequest = {
         systemPromptTemplate,
         systemPromptContextChunkTemplate,
-        responseGenerationModel: "gpt-3.5-turbo",
+        responseGenerationModel: model,
         chatHistory,
         question,
       }

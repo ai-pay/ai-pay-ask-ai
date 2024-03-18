@@ -1,4 +1,5 @@
 
+import { KnowledgeBaseChatRequest } from "ai-pay";
 import { create } from "zustand";
 
 export type ChatConfig = {
@@ -6,6 +7,7 @@ export type ChatConfig = {
   initialAssistantQuestion?: string
   defaultQuestions?: string[]
   questionBoxPlaceholder?: string
+  chatModel?: KnowledgeBaseChatRequest["responseGenerationModel"]
 }
 
 interface MessagesStore {
