@@ -41,12 +41,13 @@ export function ChatViewTextArea(): React.JSX.Element {
       />
     </div>
     <div className={cn(
-      "aip-absolute aip-bottom-2 aip-left-2 aip-right-2 aip-bg-zinc-100/90 dark:aip-bg-zinc-700/90 aip-backdrop-blur-xl aip-rounded-xl aip-flex aip-items-end aip-border aip-border-neutral-300 dark:aip-border-neutral-500 focus-within:aip-border-neutral-400 aip-transition-colors aip-flex-shrink-0",
+      "aip-absolute aip-bottom-3 aip-left-3 aip-right-3",
+      "aip-bg-zinc-100/90 dark:aip-bg-zinc-800/90 aip-backdrop-blur-sm aip-rounded-xl aip-flex aip-items-end aip-border aip-border-neutral-300 dark:aip-border-neutral-500 focus-within:aip-border-neutral-400 aip-transition-colors aip-flex-shrink-0",
       sessionState !== "ACTIVE" ? "aip-cursor-not-allowed aip-opacity-50" : "",
     )}>
       <TextareaAutosize 
         className={cn(
-          'aip-bg-transparent aip-rounded-lg aip-resize-none aip-w-full aip-min-h-full aip-p-3 aip-outline-none aip-text-base aip-text-black dark:aip-text-white aip-placeholder-neutral-400 dark:aip-placeholder-neutral-500',
+          'aip-bg-transparent aip-rounded-lg aip-resize-none aip-w-full aip-min-h-full aip-p-3 aip-outline-none aip-text-base aip-text-neutral-900 dark:aip-text-white aip-placeholder-neutral-400 dark:aip-placeholder-neutral-500',
           sessionState !== "ACTIVE" ? "cursor-not-allowed" : "",
         )}
         disabled={sessionState !== "ACTIVE"}

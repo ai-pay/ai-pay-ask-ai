@@ -13,7 +13,7 @@ setChatConfig({
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div className="dark">
+    <div className="light">
       <div className="flex flex-col items-center justify-center gap-8 h-screen w-screen">
         <AskAiModalButton />
         <SearchBarModalButton />

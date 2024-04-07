@@ -87,7 +87,12 @@ export function AssistantMessage({
   sources,
 }: AssistantMessageProps): React.JSX.Element {
   return <div 
-    className="aip-relative aip-group aip-flex aip-flex-col aip-gap-3 aip-min-h-[calc(2rem+theme(spacing[3.5])*2)] aip-min-w-[60px] aip-break-words aip-rounded-2xl aip-border aip-border-gray-100 aip-bg-gradient-to-br aip-from-gray-200 aip-px-5 aip-py-3.5 aip-text-gray-600 prose-pre:aip-my-2 aip-border-gray-400/50 dark:aip-border-gray-500/50 dark:aip-from-slate-700/75 dark:aip-text-gray-300"
+    className="
+    aip-relative aip-group aip-flex aip-flex-col aip-gap-3 aip-px-5 aip-py-3.5
+    aip-min-h-[calc(2rem+theme(spacing[3.5])*2)] aip-min-w-[60px] 
+    aip-break-words aip-text-zinc-600 dark:aip-text-zinc-300 prose-pre:aip-my-2
+    aip-rounded-2xl aip-border aip-border-zinc-400/50 dark:aip-border-zinc-500/50
+    aip-bg-gradient-to-br aip-from-zinc-200 dark:aip-from-zinc-700/30"
   >
 
     {progressPrompt && content === "" && <h3>{progressPrompt}</h3>}
@@ -95,7 +100,7 @@ export function AssistantMessage({
     {loading && content === "" && <DotPulse />}
 
     <Markdown 
-      className="aip-w-full aip-rounded-r-xl aip-rounded-tl-xl aip-mr-auto aip-prose aip-text-gray-800 dark:aip-text-gray-200 aip-max-w-none max-sm:aip-prose-sm dark:aip-prose-invert prose-headings:aip-font-semibold prose-h1:aip-text-lg prose-h2:aip-text-base prose-h3:aip-text-base prose-pre:aip-bg-gray-800 dark:prose-pre:aip-bg-gray-900 [&>pre]:aip-p-0 [&>pre]:aip-bg-transparent dark:[&>pre]:aip-bg-transparent"
+      className="aip-w-full aip-rounded-r-xl aip-rounded-tl-xl aip-mr-auto aip-prose aip-text-zinc-800 dark:aip-text-zinc-200 aip-max-w-none max-sm:aip-prose-sm dark:aip-prose-invert prose-headings:aip-font-semibold prose-h1:aip-text-lg prose-h2:aip-text-base prose-h3:aip-text-base prose-pre:aip-bg-zinc-800 dark:prose-pre:aip-bg-zinc-900 [&>pre]:aip-p-0 [&>pre]:aip-bg-transparent dark:[&>pre]:aip-bg-transparent"
       remarkPlugins={[]}
       components={{
         code(props) {

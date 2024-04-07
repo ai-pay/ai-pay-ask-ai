@@ -35,13 +35,13 @@ export function NoMessages(): React.JSX.Element {
     />}
 
     <h3
-      className="aip-text-lg aip-font-semibold dark:aip-text-gray-400 aip-mt-10 aip-mb-2"
+      className="aip-text-lg aip-font-semibold dark:aip-text-zinc-400 aip-mt-10 aip-mb-2"
     >Example Questions</h3>
     <div className="aip-flex aip-gap-2 aip-flex-wrap">
       {displayQuestions.map((question, index) => {
         return <div 
           key={index} 
-          className="aip-text-sm aip-font-semibold aip-cursor-pointer aip-text-gray-900 dark:aip-text-gray-100 aip-bg-gray-100 dark:aip-bg-slate-800/50 aip-rounded-md aip-px-4 aip-py-2 hover:aip-bg-gray-200 dark:hover:aip-bg-gray-600/80 aip-transition-colors"
+          className="aip-text-sm aip-font-semibold aip-cursor-pointer aip-text-zinc-900 dark:aip-text-zinc-100 aip-bg-zinc-100 dark:aip-bg-gray-800/50 aip-rounded-md aip-px-4 aip-py-2 hover:aip-bg-zinc-200 dark:hover:aip-bg-zinc-600/80 aip-transition-colors"
           onClick={() => sendQuestion(question)}
         >
           {question}

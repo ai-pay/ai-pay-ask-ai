@@ -1,5 +1,7 @@
 
+import { FreeTrialInformation, getFreeTrialInformation } from "ai-pay";
 import { useIsBrowserExtensionInstalled } from "ai-pay-react-hooks"
+import { useEffect, useState } from "react";
 
 export const NotActiveSessionWrapperClasses = "aip-flex-grow aip-flex aip-flex-col aip-px-5 aip-items-start aip-justify-center aip-gap-3 aip-py-5 aip-text-zinc-800 dark:aip-text-zinc-200"
 
@@ -9,10 +11,24 @@ interface RequiredAiPayWrapperProps {
   children: React.ReactNode;
 }
 
+function useAiPayFreeTrialInformation() {
+  const [freeTrialInformation, setFreeTrialInformation] = useState<FreeTrialInformation | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      setFreeTrialInformation(await getFreeTrialInformation());
+    })();
+  }, []);
+
+  return freeTrialInformation
+}
+
 export function RequiredAiPayWrapper({
   children,
 }: RequiredAiPayWrapperProps): React.ReactNode {
   const isBrowserExtensionInstalled = useIsBrowserExtensionInstalled();
+
+  const freeTrialInfo = useAiPayFreeTrialInformation();
 
   if (!isBrowserExtensionInstalled) {
     return <div className={NotActiveSessionWrapperClasses}>
@@ -21,7 +37,7 @@ export function RequiredAiPayWrapper({
       </h2>
 
       <div className="aip-text-lg">
-        <span className="aip-font-extrabold aip-text-black dark:aip-text-white">AI Pay</span> is a 3rd party payment platform to facilitate Al services (like this one). AI Pay is designed for safe, one time, micro-transactions. AI Pay allows developers to write the logic and code for an AI feature and users pay for their individual usage. 
+        <span className="aip-font-extrabold aip-text-black dark:aip-text-white">AI Pay</span> is a 3rd party platform to facilitate Al services (like this one). AI Pay allows developers to write the logic and code for an AI feature and users pay for their individual usage. Using AI Pay is similar to a user giving the website their API key, but without all the security concerns of API key theft.
         {" "}<a href="https://www.joinaipay.com" target="_blank" rel="noreferrer" className="aip-text-blue-500 dark:aip-text-blue-400 hover:aip-underline">Learn more</a>.
       </div>
       
@@ -30,9 +46,9 @@ export function RequiredAiPayWrapper({
           href="https://chromewebstore.google.com/detail/ai-pay/igghgdjfklipjmgldcdfnpppgaijmhfg" 
           target="_blank" 
           rel="noreferrer" 
-          className="aip-py-2 aip-px-6 aip-rounded-lg aip-text-lg aip-font-bold !aip-bg-opacity-80 aip-bg-gray-500 hover:aip-bg-gray-400 aip-text-white dark:aip-text-gray-100 aip-transition-all"
+          className="aip-py-2 aip-px-6 aip-rounded-lg aip-text-lg aip-font-bold !aip-bg-opacity-80 aip-bg-zinc-500 hover:aip-bg-zinc-400 aip-text-white dark:aip-text-zinc-100 aip-transition-all"
         >
-          Download AI Pay - Free $5 Credit
+          Download AI Pay - Free Trial {freeTrialInfo ? `${freeTrialInfo.numberCredits} credits` : null }
         </a>
       </div>
 

@@ -37,7 +37,7 @@ export function SearchBarModalButton({
       className="
       aip-flex aip-justify-between aip-items-center
       aip-w-60 aip-py-1.5 aip-px-2 aip-rounded-lg
-      aip-text-gray-500 dark:aip-text-white aip-text-base
+      aip-text-zinc-500 dark:aip-text-white aip-text-base
       aip-bg-neutral-300/75 dark:aip-bg-neutral-600/50 
       aip-border-[1.5px] aip-border-neutral-500/50 hover:aip-border-neutral-600 dark:hover:aip-border-neutral-300 
       aip-transition-colors"
@@ -49,7 +49,7 @@ export function SearchBarModalButton({
       </div>
 
       {commandKOpen && <p
-        className="aip-bg-gray-50/75 aip-py-0.5 aip-px-1 aip-rounded-md aip-text-sm aip-text-gray-800/90 dark:aip-bg-gray-800/60 dark:aip-text-gray-200 aip-border aip-border-neutral-400/75"
+        className="aip-bg-zinc-50/75 aip-py-0.5 aip-px-1 aip-rounded-md aip-text-sm aip-text-zinc-800/90 dark:aip-bg-zinc-800/60 dark:aip-text-zinc-200 aip-border aip-border-neutral-400/75"
       >⌘K</p>}
     </button>
     <AskAiModal 

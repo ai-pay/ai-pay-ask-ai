@@ -30,7 +30,7 @@ export function ModalDisplay({
         leaveFrom="aip-opacity-100"
         leaveTo="aip-opacity-0"
       >
-        <div className="aip-fixed aip-inset-0 aip-bg-gray-500 aip-bg-opacity-75 aip-transition-opacity" />
+        <div className="aip-fixed aip-inset-0 aip-bg-zinc-500 aip-bg-opacity-75 aip-transition-opacity" />
       </Transition.Child>
   
       <div className="aip-fixed aip-inset-0 aip-z-50 aip-w-screen aip-h-full aip-overflow-y-auto aip-mx-auto aip-py-[5vh]">

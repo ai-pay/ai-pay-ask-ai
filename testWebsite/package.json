@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ai-pay": "^0.3.12",
     "ai-pay-ask-ai": "file:../package",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

@@ -20,8 +20,8 @@ export function AskAiModal({
   return <ModalDisplay isShowing={isShowing} onClose={onClose}>
     <div className="
       aip-w-[90vw] lg:aip-w-[1000px] aip-max-h-[90vh] aip-mx-auto 
-      aip-bg-gray-100 dark:aip-bg-gray-800
-      aip-rounded-xl aip-text-gray-500">
+      aip-bg-zinc-100 dark:aip-bg-zinc-800
+      aip-rounded-xl aip-text-zinc-500">
       <EmbeddedView />
     </div>
   </ModalDisplay>
